@@ -1,0 +1,18 @@
+$owner = $operatingsystem ? {
+      'sunos'  => 'adm',
+      'redhat' => 'bin',
+      default  => undef,
+    }
+#file { '/etc/config':
+#      owner => $operatingsystem ? {
+#        'sunos'  => 'adm',
+#        'redhat' => 'bin',
+#        default  => undef,
+#      },
+#    }
+
+
+$owner = $operatingsystem ? {
+      /(redhat|debian)/ => 'bin',
+      default           => undef,
+    }
